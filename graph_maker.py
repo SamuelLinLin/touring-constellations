@@ -3,7 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Load edges from file
-edges_file = "/Users/samuelyslinlin/touring-constellations/data/edges-12.txt"
+edges_file = "/Users/samuelyslinlin/touring-constellations/data/edges-16.txt"
 tolerance = 0.01  # Tolerance for merging nodes
 G = nx.Graph()
 
@@ -32,8 +32,11 @@ with open(edges_file, 'r') as file:
 # Draw the graph
 plt.figure(figsize=(9, 9))
 pos = {node: node for node in G.nodes()}
-nx.draw_networkx(G, pos, alpha=0.6) # for testing purposes
-# nx.draw_networkx_edges(G, pos, alpha=0.6)
+
+# for testing purposes
+# nx.draw_networkx(G, pos, alpha=0.6) 
+
+nx.draw_networkx_edges(G, pos, alpha=0.6)
 plt.show()
 # Describe the created graph
 print("Number of nodes:", G.number_of_nodes())
